@@ -1,0 +1,70 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "26f3b69a-72d3-46da-a32a-b05e68e939df": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 390,
+                    "y": 60
+                },
+                "z": 0,
+                "isassociatedwith": [
+                    "6752564e-1faa-491c-8a61-d5530ee8bd5b"
+                ]
+            },
+            "6752564e-1faa-491c-8a61-d5530ee8bd5b": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 110,
+                    "y": 50
+                },
+                "z": 0
+            }
+        }
+    },
+    "Resources": {
+        "EC2I1IOR5": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "AvailabilityZone": "eu-west-1a",
+                "ImageId": "ami-0f786002e12f6c7df",
+                "InstanceType": "t2.nano",
+                "KeyName": "dado_ireland_ok",
+                "SecurityGroupIds": [
+                    {
+                        "Ref": "EC2SG2J4AB"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "26f3b69a-72d3-46da-a32a-b05e68e939df"
+                }
+            }
+        },
+        "EC2SG2J4AB": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "DadoSecGroup",
+                "SecurityGroupIngress": [
+                    {
+                        "CidrIp": "0.0.0.0/0",
+                        "IpProtocol": "-1",
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "6752564e-1faa-491c-8a61-d5530ee8bd5b"
+                }
+            }
+        }
+    }
+}
